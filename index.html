@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Artificial We: CHI 2027 Workshop on Multi-Principal AI Delegation</title>
+  <meta name="description" content="Artificial We is an in-person CHI 2027 workshop on designing AI agents that act for several people at once. Position papers due 11 February 2027.">
+  <meta property="og:title" content="Artificial We: Designing Multi-Principal AI Delegation in Human-AI Collectives">
+  <meta property="og:description" content="An in-person CHI 2027 workshop. Position papers due 11 February 2027 AoE.">
+  <meta property="og:url" content="https://artificial-we.github.io/">
+  <meta name="theme-color" content="#12142e">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="inner">
+    <a class="mark" href="#top">Artificial We<small>CHI 2027 Workshop</small></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#topics">Call for papers</a></li>
+      <li><a href="#dates-full">Dates</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#organizers">Organizers</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <!-- TODO: point this at the submission form once it exists -->
+    <a class="button" href="#submit">Submit</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="field" role="img" aria-label="Animated diagram. The screen is filled with small letter A tiles, each an agent. A few red WE badges are principals, a person or a group. Each delegates to the agents around them, shown as blue A tiles with ripples spreading outward. Where two mandates overlap, agents hand the decision back to people, shown as red H tiles. Hovering turns your cursor into a WE; clicking jumps to the workshop details."></canvas>
+  <div class="copy">
+    <p class="kicker">ACM CHI 2027 Workshop</p>
+    <h1>Artificial We</h1>
+    <p class="subtitle">Designing multi-principal AI delegation in human&#8211;AI collectives</p>
+    <div class="panel">
+      <dl>
+        <div><dt>Where</dt><dd>Pittsburgh, USA, in person</dd></div>
+        <div><dt>When</dt><dd>One day, 10&#8211;14 May 2027</dd></div>
+        <div><dt>Papers due</dt><dd>11 Feb 2027 AoE</dd></div>
+      </dl>
+      <a class="button" href="#submit">Submit a position paper</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="section" id="about">
+  <header><div class="sticky"><h2>About</h2></div></header>
+  <div class="body">
+<p class="lead">People increasingly delegate tasks to shared AI systems, from workplace assistants to domestic robots, or to personal agents that coordinate with one another. When an agent acts for several people at once, coordinating well is not enough. It must also respect whose interests it represents, what it may disclose, and what it is authorized to commit to.</p>
+      <p>Artificial We examines these entangled human&#8211;AI collectives through the lens of <strong>multi-principal AI delegation</strong>. We ask where it arises and what goes wrong, how boundaries on agents' information access and actions should be designed and governed, and how to tell whether those boundaries protect privacy and plurality, prevent unauthorized actions, and keep working over time.</p>
+      <p>We invite researchers and practitioners from HCI, CSCW, HRI, AI safety, multi-agent systems, security and identity management, protocol design, law, and organizational research. Whether you study households, workplaces, and care networks or build agent protocols and permission models, there is a seat for you.</p>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <header><div class="sticky"><h2>Why multi-principal?</h2></div></header>
+  <div class="body">
+<p>Persistent personal assistants now act across people's connected apps, and workplace agents take on delegated work inside team tools. As these agents span several people's activities, a question arises: how far should an agent follow each person's instructions, and what should it disclose or do for each of them when their wishes conflict?</p>
+      <p>Personal agents scheduling a meeting may read their principals' calendars without being permitted to reveal why someone is unavailable. A shared household robot may receive conflicting requests that ownership alone cannot fairly settle. In both cases, serving one person can compromise another's privacy or agency, and an agreement reached between agents may go beyond what anyone authorized.</p>
+
+      <h3>What we mean</h3>
+      <p><strong>Multi-principal AI delegation</strong> covers arrangements in which multiple people authorize one or more AI agents to act on their behalf, and those mandates intersect through tasks, information, decisions, or resources. A <strong>mandate</strong> sets the scope and conditions of what an agent may do. This includes both shared agents and personal agents that interact.</p>
+      <ul>
+        <li><strong>Principals, users, owners, and affected people need not be the same.</strong> A principal may never touch the interface, and people affected by an agent may have real claims without having delegated anything.</li>
+        <li><strong>The question is whose mandates authorize action, not how many users or agents there are.</strong> Multiplayer AI is about people sharing interaction; multi-agent is about how agents are configured; multi-principal is about whose interests agents may represent, and the limits of that authority.</li>
+        <li><strong>Successful coordination is not legitimate authorization.</strong> Agents can reach an efficient agreement while leaking confidential information or exceeding someone's mandate.</li>
+        <li><strong>Authentication is not loyalty.</strong> A verified delegation chain shows who granted access, not whose interests the agent serves.</li>
+      </ul>
+
+      <h3>Delegation as boundary design</h3>
+      <p>We treat multi-principal delegation as a problem of designing boundaries. Boundaries are not only restrictions: selective disclosure and limited mandates can make cooperation possible that would otherwise require unacceptable exposure. Persistent memory, subdelegation, and fast action across systems make them harder to keep. We focus on four kinds:</p>
+      <ul class="boundaries">
+        <li><b>Information</b>What an agent may see, infer, remember, and disclose, to whom, and for what purpose.</li>
+        <li><b>Authority</b>How far it may decide, negotiate, commit, or delegate on someone's behalf.</li>
+        <li><b>Representation</b>Whose side it is on when principals conflict, and whether it must say so.</li>
+        <li><b>Responsibility</b>Who notices when something goes wrong, who is accountable, and how it is repaired.</li>
+      </ul>
+      <p class="statement">Our aim is to make these boundaries manageable, enforceable, and revisable, while preserving people's ability to cooperate, disagree, and withdraw.</p>
+  </div>
+</section>
+
+<canvas class="band" aria-hidden="true"></canvas>
+
+<section class="section" id="topics">
+  <header><div class="sticky"><h2>Topics</h2></div></header>
+  <div class="body">
+<p>We welcome contributions on any aspect of AI acting for multiple people, organized around three guiding questions. Please explain how the presence of several principals, not just several users or agents, changes the design or use of the system. Privacy and unequal power are relevant throughout. The lists are illustrative, not exhaustive.</p>
+
+      <details open>
+        <summary>Where does multi-principal AI delegation arise, and what goes wrong?</summary>
+        <ul>
+          <li><strong>Delegation arrangements and architectures:</strong> shared agents, one personal agent per principal, orchestrator&#8211;worker systems, peer networks, and hybrids; how each distributes information, influence, and responsibility, including agents that meet agents their principals did not choose.</li>
+          <li><strong>Settings and trust:</strong> how delegation differs across homes, care networks, workplaces, markets, and communities, and how relationships, ownership, and dependency shape expectations of whom an agent serves.</li>
+          <li><strong>Multiplayer AI and shared workspaces:</strong> sessions where people observe, contribute to, redirect, and hand over agent work; telling participation in a session apart from authority over agents, tools, and information.</li>
+          <li><strong>Participation and awareness:</strong> helping people see who is present, whose instructions are active, and what others have approved or changed; concurrent requests, unequal participation, and moving between private preparation and joint work.</li>
+          <li><strong>Coordination and articulation work:</strong> agents relaying information between private and shared spaces, and who carries the burden of supervising them.</li>
+          <li><strong>Conflicts and failure modes:</strong> incompatible instructions, misarbitrated priorities, persuasion and collusion between agents, provider incentives that diverge from users' interests, and unauthorized commitments made at machine speed.</li>
+          <li><strong>Principals, affiliation, and loyalty:</strong> whom an agent represents; personal representatives, joint delegates, and mediators; disclosing changes in affiliation. Serving a group does not mean representing every member.</li>
+          <li><strong>Affected non-principals:</strong> bystanders, absent members, children, clients, and others whose information or interests are at stake without their having delegated.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>How should delegation boundaries be designed and governed?</summary>
+        <ul>
+          <li><strong>Mandates and their gaps:</strong> what natural-language mandates should specify; separate permissions to suggest, speak, negotiate, concede, and commit; when agents should ask for clarification, joint approval, or escalation.</li>
+          <li><strong>Interfaces for multi-principal systems:</strong> personal and collective views; showing whom an agent represents, whose approval an action needs, and how one person's actions affect others; distinguishing proposals, permissions, commitments, and completed actions.</li>
+          <li><strong>Multiparty privacy:</strong> recipient- and purpose-specific disclosure when information concerns several people; inferences about one person from another's data; leakage across conversations and clients; data minimization along delegation chains.</li>
+          <li><strong>Shared, private, and contested memory:</strong> separate rights to write, read, correct, contest, export, and delete records; provenance, disputed recollections, derived inferences, and what remains after someone leaves.</li>
+          <li><strong>Identity and access management for people and agents:</strong> linking agents to principals and mandates; scoped and delegated credentials; transferring and revoking permissions; seeing who can act for whom.</li>
+          <li><strong>Delegation chains and oversight:</strong> keeping principals' constraints intact when agents subdelegate, including to agents that serve other people.</li>
+          <li><strong>Where guarantees belong:</strong> which boundaries belong in model behavior, the runtime, identity infrastructure, or organizational agreements, and what each can and cannot guarantee.</li>
+          <li><strong>Negotiation and conflict resolution:</strong> agent-to-agent negotiation, concessions, joint consent, vetoes, refusal, and human intervention under unequal bargaining power; reaching commitments without revealing everything.</li>
+          <li><strong>Attention and priority:</strong> whose requests come first, and how urgency, vulnerability, and institutional authority shape decisions; priority rules people can read and contest.</li>
+          <li><strong>Governance, contestation, and exit:</strong> who may set or change shared rules, and whether authority to do a task includes authority to change its rules; how less powerful people can refuse, contest, leave, and take their data with them.</li>
+          <li><strong>Accountability and repair:</strong> tracing an action back to the instruction and approval that enabled it; redress for boundary violations. Revoking future authority does not undo past disclosures.</li>
+          <li><strong>Collective action:</strong> agents that allocate shared resources and duties, address free riding, and carry out collectively authorized decisions.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>How can we tell whether boundaries work?</summary>
+        <ul>
+          <li><strong>Evaluation beyond task performance:</strong> unwanted disclosure, unauthorized commitments, fidelity to each mandate, oversight effort, distribution of influence, and whether contestation and revocation succeed; benchmarks and simulations of agents with competing principals.</li>
+          <li><strong>Privacy and plurality in mediated deliberation:</strong> whether boundaries protect dissent and independent judgment when agents mediate group decisions, or create pressure to conform.</li>
+          <li><strong>Collective intelligence and mutual understanding:</strong> whether agents help people with different knowledge and priorities understand each other without full disclosure, and when mediation distorts positions.</li>
+          <li><strong>Change over time:</strong> whether boundaries hold as relationships change, memories persist, members come and go, and models are updated.</li>
+          <li><strong>Who gains and who pays:</strong> separating effects on individuals, the group, and the wider system. Better group performance does not establish permission to act.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Theory and methods</summary>
+        <ul>
+          <li><strong>Theoretical lenses:</strong> principal&#8211;agent and common-agency theory, delegation games, cooperative AI, social choice, pluralistic and normative alignment, contextual integrity, boundary objects, and commons governance.</li>
+          <li><strong>Methods:</strong> fieldwork, interviews, diary and longitudinal studies, participatory and speculative design, Wizard-of-Oz and scenario enactments, prototypes, controlled experiments, agent simulations, and formal models.</li>
+          <li><strong>Adaptive coordination structures:</strong> interfaces and protocols that participants can inspect and revise, where any change that expands access or decision rights still needs the relevant principals' approval.</li>
+        </ul>
+      </details>
+  </div>
+</section>
+
+<section class="section" id="settings">
+  <header><div class="sticky"><h2>Settings</h2></div></header>
+  <div class="body">
+<p>The hands-on session is organized around four fields, and we especially welcome cases from them:</p>
+      <ul>
+        <li><strong>Shared robots and embodied agents:</strong> robots serving several people at home, at work, in care, or in public.</li>
+        <li><strong>Workspaces and teams:</strong> shared agent workspaces and colleagues' personal agents supporting projects and organizational decisions.</li>
+        <li><strong>Personal-agent negotiation:</strong> personal agents scheduling, negotiating, or transacting with other people's agents.</li>
+        <li><strong>Commons stewardship:</strong> communities and cooperatives using agents to manage shared resources or make collective decisions.</li>
+      </ul>
+      <p>Other settings are equally welcome, including households and co-parenting, care networks, customer and professional services, and civic deliberation.</p>
+
+      <h3>Example scenarios</h3>
+      <p>Each involves an agent that acts rather than only advises, at least two principals, and someone affected who never delegated.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Scenario</th><th scope="col">Principals</th><th scope="col">Affected without delegating</th></tr></thead>
+          <tbody>
+            <tr><td>Three roommates share one home agent and a household robot</td><td>Roommates</td><td>Guests, neighbors</td></tr>
+            <tr><td>Two co-parents' agents coordinate a child's schedule</td><td>Co-parents</td><td>The child</td></tr>
+            <tr><td>Several teams share one workplace agent's time and shared documents</td><td>Team members, managers</td><td>Colleagues mentioned in what the agent compiles</td></tr>
+            <tr><td>Four teammates' agents co-write a report from each owner's material</td><td>Teammates</td><td>People named in the report, its readers</td></tr>
+            <tr><td>Agents of a patient, family, nurse, and hospital coordinate care</td><td>Patient, family, clinicians</td><td>Relatives who did not delegate</td></tr>
+            <tr><td>A candidate's agent negotiates salary with a company's agent</td><td>Candidate, employer</td><td>Other applicants and employees</td></tr>
+            <tr><td>An agent allocates donated food across food banks and volunteers</td><td>Food banks, volunteers</td><td>People receiving the food</td></tr>
+            <tr><td>Residents' agents negotiate a redevelopment plan with a city agent</td><td>Residents, city</td><td>Tenants who did not delegate</td></tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</section>
+
+<section class="section" id="submit">
+  <header><div class="sticky"><h2>How to submit</h2></div></header>
+  <div class="body">
+<p>Send us a <strong>2&#8211;4 page position paper</strong> and <strong>one case</strong>. Work in progress and early ideas are welcome. Your paper can be:</p>
+      <ul>
+        <li><strong>Empirical work</strong> on how people share, delegate to, supervise, or contest AI agents in groups</li>
+        <li><strong>A system or design case</strong> and what it reveals about multi-principal boundaries</li>
+        <li><strong>A boundary mechanism</strong> (technical, interactional, or institutional) with its assumptions and limits</li>
+        <li><strong>A conceptual or theoretical argument</strong>, including definitions and formal models</li>
+        <li><strong>A methodological contribution</strong> for studying, simulating, or evaluating these settings</li>
+        <li><strong>A provocation or speculative scenario</strong> that exposes a tension others have not seen yet</li>
+      </ul>
+
+      <h3>Your case</h3>
+      <p>The case feeds straight into the hands-on session, where groups design and stress-test rules for it. It can be fictional or anonymized and must not include personal or client data. Please describe:</p>
+      <ol>
+        <li>The setting, and what the agents are asked to do</li>
+        <li>The principals: who delegates to which agent, with what mandate</li>
+        <li>The agents: how many, whom each serves, and whether they interact or subdelegate</li>
+        <li>What is shared, what is private, and whose information is at stake</li>
+        <li>Who is affected without having delegated</li>
+        <li>The contested boundary and why it is hard to resolve</li>
+      </ol>
+
+      <h3>Format</h3>
+      <ul>
+        <li>ACM single-column format, using the <a href="https://www.acm.org/publications/proceedings-template">ACM Primary Article Template</a></li>
+        <li>2&#8211;4 pages, not counting references and the case</li>
+        <li>Not anonymized: include author names and affiliations</li>
+        <li>One PDF with the paper followed by the case</li>
+        <li>Please follow the <a href="https://sigchi.org/resources/guides-for-authors/accessibility/">SIGCHI accessibility guide for authors</a>, including alt text for figures</li>
+      </ul>
+      <!-- TODO: replace with the real submission link once the form/system is set up -->
+      <p class="note"><strong>Submission link:</strong> to be announced on this page.</p>
+
+      <h3>Review</h3>
+      <p>Organizers review each submission for relevance to multi-principal delegation, its potential to spark discussion across disciplines, and the range of perspectives it adds. Up to six contributors will give lightning talks and up to ten will present posters. Want to join without a paper? Contact us: we prepare spare cases so everyone can take part.</p>
+  </div>
+</section>
+
+<section class="section" id="dates-full">
+  <header><div class="sticky"><h2>Important dates</h2></div></header>
+  <div class="body">
+    <p>All deadlines are Anywhere on Earth (AoE).</p>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td class="when">11 Feb 2027</td><td>Position paper deadline</td></tr>
+          <tr><td class="when">25 Feb 2027</td><td>Notification of acceptance</td></tr>
+          <tr><td class="when">4 Mar 2027</td><td>CHI 2027 registration deadline</td></tr>
+          <tr><td class="when">Early May 2027</td><td>Case summaries and worksheets sent to participants, at least a week before the workshop</td></tr>
+          <tr><td class="when">10&#8211;14 May 2027</td><td>Workshop at CHI 2027, Pittsburgh (exact day set by CHI)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="program">
+  <header><div class="sticky"><h2>Program</h2></div></header>
+  <div class="body">
+<p>Two consecutive 90-minute sessions for 20&#8211;30 participants. The first builds common ground; the second is a hands-on speculative design session.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Time</th><th scope="col">Activity</th><th scope="col">What happens</th></tr></thead>
+          <tbody>
+            <tr class="session"><td colspan="3">Session I: Talks</td></tr>
+            <tr><td class="when">10 min</td><td>Opening</td><td>Goals and the four application fields</td></tr>
+            <tr><td class="when">30 min</td><td>Keynotes</td><td>Jiaxin Pei on defining the problem; Tan Zhi Xuan on cooperative AI</td></tr>
+            <tr><td class="when">50 min</td><td>Lightning talks</td><td>Up to six contributors present their cases</td></tr>
+            <tr><td class="when">Break</td><td>Posters</td><td>Up to ten contributors present posters over coffee</td></tr>
+            <tr class="session"><td colspan="3">Session II: Field building</td></tr>
+            <tr><td class="when">15 min</td><td>Build</td><td>Four groups, one per field, each draft a protocol for one case, including a rule for amending it</td></tr>
+            <tr><td class="when">15 min</td><td>Crisis</td><td>Groups swap protocols and, playing competing principals and agents, write a plausible crisis that exploits its loopholes</td></tr>
+            <tr><td class="when">15 min</td><td>Repair</td><td>Authors repair one rule and write a newspaper front page from the future: does the protocol drift, jam, or ossify?</td></tr>
+            <tr><td class="when">30 min</td><td>Field mapping</td><td>Mixed groups each take one guiding question, compare front pages, and propose design primitives, solutions, and research questions</td></tr>
+            <tr><td class="when">15 min</td><td>Synthesis</td><td>Groups assemble a shared design-space map and research agenda</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Session II adapts <a href="https://doi.org/10.1145/3772318.3790527">Protocol Futuring</a> (Hu, Chua, and Rong, CHI 2026), a speculative design method that treats rules and how they change, rather than an imagined product, as the design material. No working AI system, programming, personal data, or acting ability is needed.</p>
+      <p>The workshop will produce conflict scenarios across the four fields and a layered map of design primitives, candidate solutions, and research questions. We will keep this research agenda here and, with contributors' agreement, develop it into a community paper.</p>
+  </div>
+</section>
+
+<canvas class="band" aria-hidden="true"></canvas>
+
+<section class="section" id="papers">
+  <header><div class="sticky"><h2>Accepted papers</h2></div></header>
+  <div class="body">
+    <p class="note">Accepted position papers will be listed here, with authors' consent, after notification on 25 February 2027.</p>
+  </div>
+</section>
+
+<section class="section" id="attending">
+  <header><div class="sticky"><h2>Attending</h2></div></header>
+  <div class="body">
+<ul>
+        <li><strong>In person only.</strong> At least one author of each accepted paper must attend and register for CHI 2027.</li>
+        <li><strong>Open to CHI attendees.</strong> Authors of accepted papers have priority; others are welcome as space allows.</li>
+        <li><strong>No formal proceedings.</strong> With authors' consent, accepted papers will be posted here, so you remain free to publish elsewhere.</li>
+        <li><strong>Materials for everyone.</strong> Papers, case summaries, and the resulting agenda will be on this site for those who cannot attend.</li>
+        <li><strong>Safe to take part.</strong> We use only fictional or anonymized cases and collect no research data. You may take a writing or observing role and pause any scenario.</li>
+        <li><strong>Accessibility.</strong> We are committed to an inclusive workshop for participants with physical, sensory, cognitive, or mental health disabilities. Tell us about any access needs when you submit, or write to us at any time.</li>
+      </ul>
+  </div>
+</section>
+
+<section class="section" id="organizers">
+  <header><div class="sticky"><h2>Organizers</h2></div></header>
+  <div class="body">
+    <p>Organizers bring together HCI, AI safety, multi-agent systems, and organizational research across the UK, Singapore, the Republic of Korea, the United States, and China. Select a name to visit their homepage.</p>
+    <ul class="people">
+      <li><a href="https://amber.botao.hu/"><span class="mono" aria-hidden="true">BH<img src="photos/botao-hu.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Botao "Amber" Hu</span><span class="aff">University of Oxford</span></a></li>
+      <li><a href="https://hollysong.site/"><span class="mono" aria-hidden="true">TS<img src="photos/tianqi-song.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Tianqi Song</span><span class="aff">National University of Singapore</span></a></li>
+      <li><a href="https://skyyye.github.io/"><span class="mono" aria-hidden="true">TZ<img src="photos/tianyi-zhang.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Tianyi Zhang</span><span class="aff">Singapore Management University</span></a></li>
+      <li><a href="https://soohwan-lee.github.io/"><span class="mono" aria-hidden="true">SL<img src="photos/soohwan-lee.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Soohwan Lee</span><span class="aff">UNIST</span></a></li>
+      <li><a href="https://jiaxin-pei.github.io/"><span class="mono" aria-hidden="true">JP<img src="photos/jiaxin-pei.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Jiaxin Pei</span><span class="aff">The University of Texas at Austin</span></a></li>
+      <li><a href="https://ztangent.github.io/"><span class="mono" aria-hidden="true">TX<img src="photos/tan-zhi-xuan.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Tan Zhi Xuan</span><span class="aff">National University of Singapore</span></a></li>
+      <li><a href="https://shanghai.nyu.edu/node/42318"><span class="mono" aria-hidden="true">HR<img src="photos/helena-rong.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Helena Rong</span><span class="aff">New York University Shanghai</span></a></li>
+      <li><a href="https://hanchengcao.me/"><span class="mono" aria-hidden="true">HC<img src="photos/hancheng-cao.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Hancheng Cao</span><span class="aff">Emory University</span></a></li>
+      <li><a href="https://www.yclee.net/"><span class="mono" aria-hidden="true">YL<img src="photos/yi-chieh-lee.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Yi-Chieh Lee</span><span class="aff">National University of Singapore</span></a></li>
+      <li><a href="https://hcitang.github.io/"><span class="mono" aria-hidden="true">AT<img src="photos/anthony-tang.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Anthony Tang</span><span class="aff">Singapore Management University</span></a></li>
+      <li><a href="https://www.cs.ox.ac.uk/people/max.vankleek/"><span class="mono" aria-hidden="true">MV<img src="photos/max-van-kleek.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="name">Max Van Kleek</span><span class="aff">University of Oxford</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <header><div class="sticky"><h2>FAQ</h2></div></header>
+  <div class="body">
+    <dl class="faq">
+      <dt>Do I need an accepted CHI 2027 paper to attend?</dt>
+      <dd>No. Submit a position paper and register for CHI 2027. Workshops are open to all conference attendees, with priority for authors of accepted workshop papers.</dd>
+      <dt>Can I reuse work I have published or submitted elsewhere?</dt>
+      <dd>Yes. You may recast earlier work for this workshop. Please frame it around multi-principal delegation and include a case.</dd>
+      <dt>Can I attend online?</dt>
+      <dd>No. All CHI 2027 workshops are in person. Papers, case summaries, and the resulting research agenda will be posted here for those who cannot attend.</dd>
+      <dt>Will my paper be published?</dt>
+      <dd>There are no formal proceedings. With your consent we post accepted papers on this site, so you remain free to publish the work elsewhere.</dd>
+      <dt>Do I need a working system or technical background?</dt>
+      <dd>No. The hands-on session uses role cards and worksheets. No working AI system, programming, personal data, or acting ability is needed.</dd>
+      <dt>Is there a separate workshop fee?</dt>
+      <dd>You need to register for CHI 2027. Check the CHI 2027 registration page for any workshop fees.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <header><div class="sticky"><h2>Contact</h2></div></header>
+  <div class="body">
+    <!-- TODO: add the workshop contact email -->
+    <p class="note"><strong>Email:</strong> to be announced. Questions about access needs are welcome at any time.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>Artificial We, a workshop at ACM CHI 2027, 10&#8211;14 May 2027, Pittsburgh, USA.</span>
+  <a href="https://chi2027.acm.org/">CHI 2027</a>
+</footer>
+
+<script src="field.js" defer></script>
+<script>
+  // Underline the nav item for the section in view.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = document.querySelectorAll('.nav ul a');
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting || !byId[e.target.id]) return;
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        byId[e.target.id].setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('main .section').forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>
